@@ -1,0 +1,48 @@
+
+main .huru_navbar{
+    padding: 1.25rem 1rem;
+    background-color:var(--second-bg-color);
+    background-color:transparent;
+    box-shadow: 1px 1px 1px 0px hsl(225, 11%, 15%);
+}
+.huru_navbar .left .logo{
+    background-color: hsl(230, 14%, 8%);
+    padding: 0.2rem 0.4rem;
+    border-radius: .4rem;
+    transition:all 0.3s ease-in;
+}
+.huru_navbar .left .logo:active{
+    transform: scale(0.9);
+}
+.left .title a {
+    color: var(--second-primary);
+    font-weight: 700;
+    font-size: 1.5rem;
+    padding: 1rem 0;
+}
+
+.huru_navbar .right .search,
+.huru_navbar .right .noti
+{
+    padding: 0.5rem 0.6rem;
+    border-radius: .4rem;
+    transition: background-color 0.3s ease-in;
+}
+.huru_navbar .right .noti:hover,
+.huru_navbar .right .search:hover
+{
+    background-color: hsl(230, 14%, 8%);
+}
+.huru_navbar .right .search:active,
+.huru_navbar .right .noti:active
+{
+    transform: scale(0.9);
+}
+.huru_navbar .right .profile {
+    background-color: hsl(230, 14%, 8%);
+    border-radius: 50%;
+    padding: 0.4rem;
+}
+.render-children{
+
+}

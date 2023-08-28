@@ -1,0 +1,60 @@
+.huru_categories{
+    margin-top: 2rem;
+    padding: 0 0.6rem;
+    /* height: 20rem; */
+}
+.huru_categories .huru_title h2 {
+    color: var(--font-primary);
+    font-size: 1.5rem;
+    white-space: nowrap;
+    font-weight: normal;
+    padding: 1rem 0;
+    margin-left: 1rem;
+}
+.huru_categories .film_list{
+    margin-top: 1.5rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    justify-content: space-between;
+    gap: 1rem;
+    width: 100%; /* Adjust the width as needed */
+    /* height: 20rem; */
+
+}
+.film_list .film_information{
+    width: 100%;
+    padding: 1rem;
+    border-radius: .5rem;
+    display: flex;
+    justify-content:space-between;    
+    flex-direction: column;
+    height: 15rem;
+    background-color:#101014;
+    box-shadow: 1px 2px 5px 0px rgba(0,0,0,0.75);
+    transition: all 0.4s ease;
+}
+.film_list .film_information:hover{
+    transform: translateY(-.5rem);
+}
+.film_information .film_control {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap:2rem;
+    padding: 1.5rem 1rem;
+    background-color:var(--bg-primary);
+    border-radius: .6rem;
+    cursor: pointer;
+}
+
+.film_control h3 {
+    color: var(--font-primary);
+    padding-bottom: .5rem;
+}
+.film_control p {
+    color: var(--second-font-primary);
+}
+.film-link button {
+    color: var(--font-primary);
+    font-size: .9rem;
+}

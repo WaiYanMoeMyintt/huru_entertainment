@@ -1,0 +1,56 @@
+.huru_swiper{
+    height: 100vh;
+}
+.overlay-slide {
+    position: relative;
+}
+.overlay-slide::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to top, rgba(0,0,0,2) 20%,rgba(0,0,0,0.8) 40%, rgba(0,0,0,.6)  70%,rgba(0,0,0,.4) 100%);
+}
+.home_information{
+    position: absolute;
+    bottom: 8rem;
+    padding: 1.5rem 1rem;
+}
+.home_information .info_title{
+    color: var(--second-font-primary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:1.25rem;
+}
+.home_information h1 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--font-primary);
+    white-space:nowrap;
+}
+.home_information .overview {
+    font-size: 1rem;
+    color: var( --second-font-primary);
+    white-space: pre-wrap;
+    line-height: 2rem;
+}
+.home_information .watch
+{
+    display: block;
+    background-color: var(--second-primary);
+    padding: .6rem 1.5rem;
+    border-radius: .4rem;
+    cursor: pointer;
+    color: var(--font-primary);
+}
+.home_information .list {
+    display: block;
+    padding: .6rem 1.5rem;
+    border-radius: .4rem;
+    cursor: pointer;
+    color: var(--font-primary);
+    border: 2px solid var( --second-font-primary);
+}
