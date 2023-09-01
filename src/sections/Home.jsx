@@ -11,7 +11,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 
 // import required modules
-import { Pagination } from "swiper/modules";
+import { Pagination, Autoplay } from "swiper/modules";
 import {
   Popular,
   Series,
@@ -57,15 +57,21 @@ const Home = () => {
         pagination={{
           clickable: true,
         }}
-        modules={[Pagination]}
-        className="mySwiper huru_swiper "
+        autoplay={{
+          delay: 3000,
+          disableOnInteraction: false,
+        }}
+        modules={[Pagination, Autoplay]}
+        className="mySwiper huru_swiper"
       >
         {discover.map((movies) => (
+          <Link to = {`/movies/${movies.id}/${movies.original_title}`}>
           <SwiperSlide
             className="bg-cover bg-no-repeat bg-center overlay-slide"
             style={{ backgroundImage: `url(${imgUrl + movies.backdrop_path})` }}
             key={movies.id}
           >
+
             <div className="home_information flex flex-col items-center justify-center gap-4 w-full">
             <h1>{movies.original_title}</h1>
               <div className="info_title flex flex-1 gap-5">
@@ -108,6 +114,7 @@ const Home = () => {
               </div>
             </div>
           </SwiperSlide>
+          </Link>
         ))}
       </Swiper>
       <Upcoming />

@@ -4,6 +4,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import { Pagination, Navigation } from "swiper/modules";
 import "../css/rating.css";
+import { Link } from "react-router-dom";
 
 const Top = () => {
   const api =
@@ -39,6 +40,7 @@ const Top = () => {
       >
         {rating.map((items, index) => (
           <SwiperSlide key={items.id}>
+          <Link to = {`/movies/${items.id}/${items.original_title}`}>
             <div className="poster">
               <img
                 src={imgUrl + items.poster_path}
@@ -73,6 +75,7 @@ const Top = () => {
                 <h1>{items.original_title}</h1>
               </div>
             </div>
+            </Link>
           </SwiperSlide>
         ))}
       </Swiper>

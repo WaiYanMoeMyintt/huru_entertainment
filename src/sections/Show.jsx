@@ -4,6 +4,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import { Pagination, Navigation } from "swiper/modules";
 import "../css/popular.css";
+import { Link } from "react-router-dom";
 
 const Show = () => {
   const api =
@@ -39,10 +40,11 @@ const Show = () => {
       >
         {popular.map((items, index) => (
           <SwiperSlide key={items.id}>
+          <Link to = {`/series/${items.id}/${items.original_name}`}>
             <div className="poster">
               <img
                 src={imgUrl + items.poster_path}
-                alt={items.original_title}
+                alt={items.original_name}
               />
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -73,6 +75,7 @@ const Show = () => {
                 <h1>{items.original_name}</h1>
               </div>
             </div>
+          </Link>
           </SwiperSlide>
         ))}
       </Swiper>

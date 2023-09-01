@@ -4,6 +4,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import { Pagination, Navigation } from "swiper/modules";
 import "../css/recommend.css";
+import { Link } from "react-router-dom";
 
 const Recommend = () => {
     
@@ -40,6 +41,7 @@ const Recommend = () => {
       >
         {recommend.map((items, index) => (
           <SwiperSlide key={items.id}>
+          <Link to={`/series/${items.id}/${items.original_name}`}>
             <div className="poster">
               <img
                 src={imgUrl + items.poster_path}
@@ -74,6 +76,7 @@ const Recommend = () => {
                 <h1>{items.original_name}</h1>
               </div>
             </div>
+            </Link>
           </SwiperSlide>
         ))}
       </Swiper>

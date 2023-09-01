@@ -4,6 +4,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import { Pagination, Navigation } from "swiper/modules";
 import "../css/today.css";
+import { Link } from "react-router-dom";
 
 const Show = () => {
 
@@ -46,6 +47,7 @@ const Show = () => {
       >
         {today.map((items, index) => (
           <SwiperSlide key={items.id}>
+          <Link to = {`/series/${items.id}/${items.original_name}`}>
             <div className="poster">
               <img
                 src={imgUrl + items.poster_path}
@@ -80,6 +82,7 @@ const Show = () => {
                 <h1>{items.original_name}</h1>
               </div>
             </div>
+            </Link>
           </SwiperSlide>
         ))}
       </Swiper>

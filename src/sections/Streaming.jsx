@@ -4,10 +4,11 @@ import "swiper/css";
 import "swiper/css/navigation";
 import { Pagination, Navigation } from "swiper/modules";
 import "../css/streaming.css";
+import { Link } from "react-router-dom";
 
 const Streaming = () => {
   const api =
-    "https://api.themoviedb.org/3/movie/top_rated?api_key=1b7c076a0e4849aeefd1f3c429c99a36&language=en-US&page=1";
+    "https://api.themoviedb.org/3/movie/top_rated?api_key=1b7c076a0e4849aeefd1f3c429c99a36&language=en-US&page=2";
   const imgUrl = "https://image.tmdb.org/t/p/original/";
   const [streaming, setStreaming] = useState([]);
 
@@ -39,6 +40,7 @@ const Streaming = () => {
       >
         {streaming.map((items, index) => (
           <SwiperSlide key={items.id}>
+          <Link to = {`/movies/${items.id}/${items.original_title}`}>
             <div className="poster">
               <img
                 src={imgUrl + items.poster_path}
@@ -73,6 +75,7 @@ const Streaming = () => {
                 <h1>{items.original_title}</h1>
               </div>
             </div>
+            </Link>
           </SwiperSlide>
         ))}
       </Swiper>

@@ -4,6 +4,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import { Pagination, Navigation } from "swiper/modules";
 import "../css/popular.css";
+import { Link } from "react-router-dom";
 
 const Popular = () => {
   const dateObject = new Date();
@@ -64,6 +65,7 @@ const Popular = () => {
       >
         {popular.map((items, index) => (
           <SwiperSlide key={items.id}>
+          <Link to = {`/series/${items.id}/${items.original_name}`}> 
             <div className="poster">
               <img
                 src={imgUrl + items.poster_path}
@@ -98,6 +100,7 @@ const Popular = () => {
                 <h1>{items.original_title}</h1>
               </div>
             </div>
+            </Link>
           </SwiperSlide>
         ))}
       </Swiper>
