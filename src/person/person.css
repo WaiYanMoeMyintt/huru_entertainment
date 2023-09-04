@@ -1,0 +1,130 @@
+.person_content {
+  padding: 2rem 2.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: hsl(220, 18%, 7%);
+  position: relative;
+  overflow:hidden;
+  margin-top: 4rem;
+}
+.person_content .left_person img {
+  object-fit: cover;
+  display: block;
+  max-width: 25rem;
+  height: 32rem;
+  border-radius: 0.5rem;
+
+}
+
+.person_content .right_person {
+  height: auto;
+  text-align: center;
+}
+
+.person_content .right_person h3 {
+  font-size: 1.8rem;
+  color: var(--font-primary);
+  padding: 1rem 0;
+  font-family: "Open Sans", sans-serif;
+}
+.person_content .right_person h5 {
+  color: var(--font-primary);
+  padding: 0.5rem 0;
+}
+.person_content .right_person p {
+  line-height: 2rem;
+  font-size: 0.9rem;
+  color: var(--second-font-color);
+  overflow: hidden;
+}
+
+.person_content .right_person button {
+  color: var(--second-primary);
+  font-size: 0.9rem;
+}
+.cast_information {
+  padding: 2rem 2.5rem;
+  flex-wrap: wrap;
+  background-color: hsl(220, 18%, 7%);
+  position: relative;
+}
+.cast_information .left_info {
+  background-color: var(--bg-primary);
+  box-shadow: 1px 1px 1px 0px #191920;
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+}
+.cast_information .left_info .person_title h3 {
+  color: var(--font-primary);
+  font-size: 1.6rem;
+  font-family: "Open Sans", sans-serif;
+}
+.left_info .personal {
+  display: flex;
+  flex-direction: column;
+  margin: 1.5rem 0;
+  font-family: "Open Sans", sans-serif;
+}
+.left_info .personal h5 {
+  color: var(--font-primary);
+  padding: 0.5rem 0;
+}
+.left_info .personal p {
+  color: hsl(0, 0%, 43%);
+}
+
+
+/* 
+ */
+.cast_information .right_info{
+    width: 100%;
+    margin-top: 1rem;
+}
+.cast_information .right_info .acting_title {
+    margin: 1rem 0;
+}
+.cast_information .right_info .acting_title h3 {
+  color: var(--font-primary);
+  font-size: 1.6rem;
+  font-family: "Open Sans", sans-serif;
+}
+
+ .right_info .acting_content {
+  background-color: hsl(225,15%,5%);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  justify-content: space-between;
+  gap: 1rem;
+  width: 100%;
+  margin-top: 1rem;
+  position: relative;
+  padding: 1rem 0rem;;
+} 
+.cast_information .right_info .acting_content .acting_movies img {
+  max-width: 100%;
+  height: auto;
+  border-radius: .5rem;
+}
+.right_info .acting_content .acting_movies{
+    padding: .5rem .6rem;
+    width: auto;
+}
+.right_info .acting_content .acting_movies p {
+    color: var(--font-primary);
+    margin: .6rem 0;
+    text-align: center;
+    font-size: .9rem;
+    white-space: nowrap;
+}
+.not_availabile{
+  background-color: hsl(240, 8%, 9%);
+  height:20rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.5rem;
+  color: var(--second-font-primary);
+  font-size: .9rem;
+}
