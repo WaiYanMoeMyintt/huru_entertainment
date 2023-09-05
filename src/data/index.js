@@ -7,37 +7,37 @@ import biography from "../assets/biography.png";
 
 export const films = [
   {
-    id: 1,
+    id: 28,
     name: action,
     items: 2300,
     title: "Action",
   },
   {
-    id: 2,
+    id: 99,
     name: biography,
     items: 1800,
     title: "Biography",
   },
   {
-    id: 3,
+    id: 27,
     name: ghost,
     items: 3200,
     title: "Horror",
   },
   {
-    id: 4,
+    id: 18,
     name: romance,
     items: 450,
     title: "Romance",
   },
   {
-    id: 5,
+    id: 878,
     name: science,
     items: 1400,
     title: "Science",
   },
   {
-    id: 6,
+    id: 35,
     name: comedy,
     items: 3000,
     title: "Comedy",
