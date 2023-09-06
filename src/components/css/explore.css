@@ -1,0 +1,21 @@
+.explore_content {
+    margin-top:5rem;
+    padding: 1.5rem 1.5rem;
+}
+.explore_title {
+    color: var(--font-primary);
+    font-size: 1.2rem;
+}
+.explore_control {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    justify-content: space-between;
+    gap: 1rem;
+    width: 100%;
+    position: relative;
+    padding: 2rem 0;
+}
+.explore_content p {
+    text-align: center;
+    margin-top: 0.5rem;
+}
