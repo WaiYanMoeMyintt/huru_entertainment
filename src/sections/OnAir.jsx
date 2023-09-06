@@ -11,7 +11,28 @@ const OnAir = () => {
     "https://api.themoviedb.org/3/tv/airing_today?api_key=1b7c076a0e4849aeefd1f3c429c99a36&language=en-US&page=1"
   const imgUrl = "https://image.tmdb.org/t/p/original/";
   const [air, setAir] = useState([]);
+  const [slidesPerView, setSlidesPerView] = useState(5);
+  useEffect(() => {
+    const handleResize = () => {
+      // Update slidesPerView based on screen width
+      if (window.innerWidth < 768) {
+        setSlidesPerView(3); // For mobile devices
+      } else {
+        setSlidesPerView(5); // For larger screens
+      }
+    };
 
+    // Add event listener for window resize
+    window.addEventListener("resize", handleResize);
+
+    // Call handleResize initially to set the initial value
+    handleResize();
+
+    // Clean up the event listener on component unmount
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
   useEffect(() => {
     const fetchAir = async () => {
       try {
@@ -31,8 +52,8 @@ const OnAir = () => {
         <h2>On-The-Air</h2>
       </div>
       <Swiper
-        slidesPerView={3}
-        spaceBetween={10}
+        slidesPerView={slidesPerView}
+        spaceBetween={20}
         pagination={{ clickable: true }}
         navigation={true}
         modules={[Navigation]}

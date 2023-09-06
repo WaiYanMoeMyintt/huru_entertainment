@@ -12,7 +12,28 @@ const Trending = () => {
   const imgUrl = "https://image.tmdb.org/t/p/original/";
   const [trending, setTrending] = useState([]);
   const [detail, setDetail] = useState([]);
+  const [slidesPerView, setSlidesPerView] = useState(5);
+  useEffect(() => {
+    const handleResize = () => {
+      // Update slidesPerView based on screen width
+      if (window.innerWidth < 768) {
+        setSlidesPerView(3); // For mobile devices
+      } else {
+        setSlidesPerView(5); // For larger screens
+      }
+    };
 
+    // Add event listener for window resize
+    window.addEventListener("resize", handleResize);
+
+    // Call handleResize initially to set the initial value
+    handleResize();
+
+    // Clean up the event listener on component unmount
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
   useEffect(() => {
     const fetchTrending = async () => {
       try {
@@ -50,8 +71,8 @@ const Trending = () => {
         <h2>Trending Now</h2>
       </div>
       <Swiper
-        slidesPerView={3}
-        spaceBetween={10}
+        slidesPerView={slidesPerView}
+        spaceBetween={20}
         pagination={{ clickable: true }}
         navigation={true}
         modules={[Navigation]}

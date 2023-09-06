@@ -26,13 +26,12 @@ import {
   Recommend,
   Categories,
   Poster,
-  Footer
-
+  Footer,
 } from "../sections";
 import { split } from "postcss/lib/list";
 const Home = () => {
   const imgUrl = "https://image.tmdb.org/t/p/original/";
-  const api = 
+  const api =
     "https://api.themoviedb.org/3/discover/movie?api_key=1b7c076a0e4849aeefd1f3c429c99a36&include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc";
   const [discover, setDiscover] = useState([]);
 
@@ -42,81 +41,68 @@ const Home = () => {
       try {
         const fetchData = await fetch(api);
         const response = await fetchData.json();
-        const splitData = response.results.slice(0, 4);
+        const splitData = response.results.slice(0, 5);
+        console.log(splitData);
         setDiscover(splitData);
       } catch (err) {
         return err.message;
       }
     };
     discoverPage();
-  },[]);
+  }, []);
 
   return (
     <header className="h-full">
-      <Swiper
-        pagination={{
-          clickable: true,
-        }}
-        autoplay={{
-          delay: 3000,
-          disableOnInteraction: false,
-        }}
-        modules={[Pagination, Autoplay]}
-        className="mySwiper huru_swiper"
-      >
-        {discover.map((movies) => (
-          <Link to = {`/movies/${movies.id}/${movies.original_title}`}>
-          <SwiperSlide
-            className="bg-cover bg-no-repeat bg-center overlay-slide"
-            style={{ backgroundImage: `url(${imgUrl + movies.backdrop_path})` }}
-            key={movies.id}
-          >
-
-            <div className="home_information flex flex-col items-center justify-center gap-4 w-full">
-            <h1>{movies.original_title}</h1>
-              <div className="info_title flex flex-1 gap-5">
-              
-                <div className="date ">
-                  <p>{movies.release_date.slice(0, 4)}.</p>
-                </div>
-                <div className="vote flex  items-center justify-center flex-row">
-                  <img src={star} width={20} height={20} />
-                  <p>{movies.vote_average}</p>
-                </div>
-                <div className="lang flex items-center justify-center gap-2">
-                  <img
-                    className=""
-                    src={english}
-                    width={40}
-                    height={40}
-                  />
-                  <p>{movies.original_language}</p>
-                </div>
+      <div className="home_content">
+        <Swiper
+          pagination={{
+            clickable: true,
+          }}
+          autoplay={{
+            delay: 3000,
+            disableOnInteraction: false,
+          }}
+          modules={[Pagination, Autoplay]}
+          className="mySwiper huru_swiper"
+        >
+          {discover.map((items) => (
+            <SwiperSlide className="huru_swiper_items" key={items.id}>
+              <div className="huru_poster">
+                <img
+                  src={imgUrl + items.poster_path}
+                  alt={items.original_title}
+                />
               </div>
-             
-              <p className="overview">
-                {movies.overview.slice(0, 120)}
-                {"..."}
-              </p>
-              <div className="discover_list flex items-center justify-center gap-5">
+              <div className="information">
+                <p>{items.release_date.slice(0, 4)}.</p>
+                <h2>{items.original_title}</h2>
+                <p>{items.overview}</p>
                 <Link
                   className="watch"
-                  to={`/movies/${movies.id}/${movies.original_title}`}
+                  to={`/movies/${items.id}/${items.original_title}`}
                 >
                   Watch Now
                 </Link>
-                <Link
-                  className="list"
-                  to={`/movies/${movies.id}/${movies.original_title}`}
-                >
-                  +Add list
-                </Link>
               </div>
-            </div>
-          </SwiperSlide>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+
+        <div className="second_content">
+          <Link to={"/trending"} className="trending cursor-pointer">
+            <p>Trending</p>
           </Link>
-        ))}
-      </Swiper>
+          <Link to={"/latest"} className="latest cursor-pointer">
+            <p>Latest</p>
+          </Link>
+          <Link to={"/upcoming"} className="upcoming cursor-pointer">
+            <p>Upcoming</p>
+          </Link>
+          <Link to={"/streaming"} className="playing cursor-pointer">
+            <p>Streaming</p>
+          </Link>
+        </div>
+      </div>
       <Upcoming />
       <Trending />
       <Popular />

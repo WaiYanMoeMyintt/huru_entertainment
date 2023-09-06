@@ -1,9 +1,9 @@
 import React from "react";
 import "../css/categories.css";
 import right from "../assets/right.svg";
+import { Link } from "react-router-dom";
 import { films } from "../data";
 const Categories = () => {
-  console.log(films);
   return (
     <div className="huru_categories">
       <div className="huru_title">
@@ -12,7 +12,7 @@ const Categories = () => {
 
       <div className="film_list">
         {films.map((items) => (
-          <div className="film_information" key={items.d}>
+          <Link to = {`/categories/${items.id}/${items.title}`} className="film_information" key={items.d}>
             <div className="film_control">
               <div className="icon">
                 <img src={items.name} alt={items.name} width={30} height={30} />
@@ -26,8 +26,12 @@ const Categories = () => {
                  <button>View More</button>
                  <img src = {right} width={20} height={20} alt="right" />
             </div>
-          </div>
+          </Link>
         ))}
+      </div>
+
+      <div className="explore">
+          <Link to = "/categories">Explore Categories</Link>
       </div>
     </div>
   );

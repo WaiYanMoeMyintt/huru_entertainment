@@ -15,7 +15,7 @@ import {
   extendTheme,
 } from "@chakra-ui/react";
 
-const Nav = ({ children }) => {
+const Nav = ({ children}) => {
   return (
     <main className="w-full relative">
       <div className="huru_navbar flex flex-col justify-between items-center flex-1 w-full z-50">
@@ -27,9 +27,7 @@ const Nav = ({ children }) => {
           </div>
           <Search />
         </div>
-        <div>
-            <h1>Hello motherFucker</h1>
-        </div>
+
       </div>
       <div className="render-children">{children}</div>
     </main>

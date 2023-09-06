@@ -11,10 +11,11 @@ import TodayShow from "./TodayShow";
 import Rated from "./Rated";
 import Recommend from "./Recommend";
 import Poster from "./Poster";
+import Results from "./Results";
 import { Footer } from "./Footer";
 
 export {
     Categories, Popular, Series, Streaming, Trending, Upcoming, Top, OnAir,Show,
-    TodayShow, Rated, Recommend, Poster, Footer 
+    TodayShow, Rated, Recommend, Poster, Footer , Results
 };
 

@@ -1,5 +1,6 @@
 import React from "react";
 import "../css/poster.css";
+import { Link } from "react-router-dom";
 const Poster = () => {
   return (
     <div className="poster_content">
@@ -19,7 +20,7 @@ const Poster = () => {
             the shared love of storytelling.
           </p>
           <div className="poster_button">
-            <button>Browse Movies</button>
+            <Link to = {'/categories'}>Browse Movies</Link>
           </div>
         </div>
       </div>
