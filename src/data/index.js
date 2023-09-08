@@ -210,6 +210,23 @@ export const download = [
     id:1,
     name:store
    },
-   
-
 ]
+
+export const navLinks = [
+  {
+    id:1,
+    name:"Explore",
+  },
+  {
+    id:2,
+    name:"Movies"
+  },
+  {
+    id:3,
+    name:"Series"
+  },
+  {
+    id:4,
+    name:"TV-Shows"
+  }
+];
