@@ -12,7 +12,6 @@ const Results = () => {
         const startFetch = await fetch(api);
         const responseData = await startFetch.json();
         setResults(responseData.results);
-        console.log(responseData.results);
       } catch (err) {
         return err.message;
       }

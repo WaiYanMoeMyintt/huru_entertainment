@@ -91,7 +91,7 @@ const Recommend = () => {
             </div>
             <div className="detail">
               <div className="detail_info">
-                <p>{items.first_air_date.slice(0, 4)}</p>
+                <p>{items.first_air_date}</p>
               </div>
               <div className="detail_title">
                 <h1>{items.original_name}</h1>
