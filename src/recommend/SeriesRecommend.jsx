@@ -7,6 +7,7 @@ import Recommend from "../seriesDetail/Recommend";
 import { Footer } from "../sections/Footer";
 const SeriesRecommend = () => {
   const { id, name } = useParams();
+  document.title = name;
   const imgUrl = "https://image.tmdb.org/t/p/original/";
   const api = `https://api.themoviedb.org/3/tv/${id}?api_key=1b7c076a0e4849aeefd1f3c429c99a36&language=en-US`;
   const [series, setSeries] = useState();
