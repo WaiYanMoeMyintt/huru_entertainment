@@ -31,7 +31,7 @@ const Trailer = () => {
       </div>
 
       {video && (
-        <div className="trailers">
+        <div className="trailers w-full flex justify-start items-start flex-col">
           {video.map((trailers) => (
             <iframe
               src={`https://www.youtube.com/embed/${trailers.key}`}
