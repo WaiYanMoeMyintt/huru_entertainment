@@ -80,7 +80,7 @@
   height: 45px;
   margin-top: 0.4rem;
 }
-.detail .detail_title h1 {
+.detail .detail_title h2 {
    font-size: .9rem;
    font-weight: 300;
    color: var(--font-primary);

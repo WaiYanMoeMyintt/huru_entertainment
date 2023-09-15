@@ -58,3 +58,18 @@
     color: var(--font-primary);
     font-size: .9rem;
 }
+
+.explore {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.explore a {
+    display: block;
+    background-color: var(--second-primary);
+    padding: .6rem 1.5rem;
+    border-radius: .4rem;
+    cursor: pointer;
+    color: var(--font-primary);
+}

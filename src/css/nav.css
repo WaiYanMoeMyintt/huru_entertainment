@@ -1,9 +1,21 @@
-
 main .huru_navbar{
-    padding: 1.25rem 1rem;
-    background-color:var(--second-bg-color);
-    background-color:transparent;
-    box-shadow: 1px 1px 1px 0px hsl(225, 11%, 15%);
+    width: 100%;
+    padding: .6rem 1rem;
+    background-color:var(--bg-primary);
+    position: fixed;
+    top:0;
+
+}
+main .huru_navbar .navbar_control{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  
+    border-radius: .5rem;
+    padding: .6rem 1rem;
+    background-color:#131316;
+    box-shadow: 1px 1px 1px 0px #191920;
 }
 .huru_navbar .left .logo{
     background-color: hsl(230, 14%, 8%);
@@ -21,28 +33,45 @@ main .huru_navbar{
     padding: 1rem 0;
 }
 
-.huru_navbar .right .search,
-.huru_navbar .right .noti
-{
-    padding: 0.5rem 0.6rem;
-    border-radius: .4rem;
-    transition: background-color 0.3s ease-in;
+/* for large screen devices */
+.large_navbar{
+    background-color: var( --second-bg-color);
+    box-shadow: 1px 1px 1px 0px #191920;
 }
-.huru_navbar .right .noti:hover,
-.huru_navbar .right .search:hover
-{
-    background-color: hsl(230, 14%, 8%);
+.large_control {
+    display: flex;
+    justify-content: space-between;
+    padding: 1.5rem 0.6rem;
 }
-.huru_navbar .right .search:active,
-.huru_navbar .right .noti:active
-{
-    transform: scale(0.9);
+.large_control .left_content .title a{
+    color: var(--second-primary);
+    font-weight: 700;
+    font-size: 1.5rem;
+    padding: 1rem 0;
 }
-.huru_navbar .right .profile {
-    background-color: hsl(230, 14%, 8%);
-    border-radius: 50%;
-    padding: 0.4rem;
+.right_content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap:1.25rem;
+    padding: 0 1.5rem;
 }
-.render-children{
-
+.right_content input {
+    padding: 0.3rem 2rem;
+    transition: all 0.3s ease;
+    background-color:#0e0f14;
+    border: 1px solid #ccc;
+    border-radius: 0.3rem;
+    width: 100%;
+    color:var(--font-primary);
+}
+.right_content input:focus{
+    border: none;
+}
+.right_content h3 {
+    color: var(--font-primary);
+    transition: all 0.4s ease;
+}
+.right_content h3:hover{
+    color: var(--second-primary);
 }

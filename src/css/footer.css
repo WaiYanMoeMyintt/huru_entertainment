@@ -16,14 +16,13 @@
     position: relative;
 }
 .footer_header a::after{
-    content: '';
-    /* background-color: var(--second-primary); */
+    /* content: '';
     background-color:var(--second-font-primary);
     height: 1px;
     width: 100%;
     position: absolute;
     bottom: 0;
-    left: 0;
+    left: 0; */
 }
 .footer_header .icons{
     display: flex;
@@ -33,13 +32,13 @@
     padding: 1rem 0;
 }
 .footer_header .icons::after{
-    content: '';
+    /* content: '';
     background-color:var(--second-font-primary);
     height: 1px;
     width: 100%;
     position: absolute;
     bottom: 0;
-    left: 0;
+    left: 0; */
 }
 
 .footer_banner{

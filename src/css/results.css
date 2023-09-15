@@ -14,6 +14,11 @@
     position: relative;
     padding: 2rem 0;
 }
+.result_title h2 {
+    color: var(--font-primary);
+    font-size: 1.25rem;
+
+}
 .detail_results p {
     color: var(--second-font-primary);
     font-size: 0.8rem;

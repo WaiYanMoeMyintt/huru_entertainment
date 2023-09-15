@@ -52,7 +52,7 @@ p {
 .poster_button {
     width: 80%;
 }
-.poster_button button {
+.poster_button a {
     display: inline-block;
     background-color: var(--second-primary);
     padding: .6rem 1.5rem;
