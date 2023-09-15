@@ -6,7 +6,7 @@ import bell from "../assets/bell.svg";
 import profile from "../assets/profile.webp";
 import Search from "./Search";
 import { navLinks } from "../data";
-import { Link , useNavigate} from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import {
   Tooltip,
@@ -30,7 +30,6 @@ const Nav = ({ children }) => {
     e.preventDefault();
     navigate(`/search/${searchValue}`);
   };
-
   const [result, setResult] = useState([]);
   useEffect(() => {
     const searchData = async () => {
@@ -38,7 +37,7 @@ const Nav = ({ children }) => {
         const startFetch = await fetch(api);
         const responseData = await startFetch.json(); // Add await here
         setResult(responseData.results); // Use responseData.results
-        console.log(responseData)
+        console.log(responseData);
       } catch (err) {
         console.error(err.message);
       }
@@ -46,12 +45,18 @@ const Nav = ({ children }) => {
     searchData();
   }, [api]);
 
+  const changeTheRoute = () => {
+    if (window.location.pathname === "/") {
+      document.title = "Chill With Huru's";
+      console.log("hello");
+    }
+  };
   return (
     <main className="w-full relative">
       <div className="huru_navbar lg:hidden md:flex flex-col justify-between items-center flex-1 w-full z-50">
         <div className="navbar_control">
           <div className="left flex gap-5">
-            <div className="title cursor-pointer">
+            <div onClick={changeTheRoute} className="title cursor-pointer">
               <Link to="/">huru</Link>
             </div>
           </div>
@@ -62,21 +67,23 @@ const Nav = ({ children }) => {
       <div className="large_navbar">
         <div className="large_control">
           <div className="left flex gap-5">
-             <div className="title cursor-pointer">
+            <div onClick={changeTheRoute} className="title cursor-pointer">
               <Link to="/">huru</Link>
             </div>
           </div>
           <div className="right_content">
             <form onSubmit={handleSubmit} className="input_control">
-               <input onChange={updateValue} type="search" placeholder="Search Movies..." />
+              <input
+                onChange={updateValue}
+                type="search"
+                placeholder="Search Movies..."
+              />
             </form>
-               {
-                navLinks.map((items)=>(
-                   <Link to = {`/${items.name}`} key={items.id}>
-                        <h3>{items.name}</h3>
-                   </Link>
-                ))
-               }
+            {navLinks.map((items) => (
+              <Link to={`/${items.name}`} key={items.id}>
+                <h3>{items.name}</h3>
+              </Link>
+            ))}
           </div>
         </div>
       </div>

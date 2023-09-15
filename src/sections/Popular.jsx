@@ -84,7 +84,7 @@ const Popular = () => {
       >
         {popular.map((items, index) => (
           <SwiperSlide key={items.id}>
-          <Link to = {`/series/${items.id}/${items.original_name}`}> 
+          <Link to = {`/movies/${items.id}/${items.original_title}`}> 
             <div className="poster">
               <img
                 src={imgUrl + items.poster_path}
