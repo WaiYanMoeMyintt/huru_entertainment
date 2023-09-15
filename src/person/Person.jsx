@@ -4,10 +4,11 @@ import { Link, useParams } from "react-router-dom";
 import "./person.css";
 
 const Person = () => {
-  const { id } = useParams();
+  const { id,name } = useParams();
   const creditMovies = `https://api.themoviedb.org/3/person/${id}/movie_credits?api_key=1b7c076a0e4849aeefd1f3c429c99a36`;
   const personAPI = `https://api.themoviedb.org/3/person/${id}?api_key=1b7c076a0e4849aeefd1f3c429c99a36`;
 
+  document.title = name
   // Set the essential image path
   const imgUrl = "https://image.tmdb.org/t/p/original/";
 
