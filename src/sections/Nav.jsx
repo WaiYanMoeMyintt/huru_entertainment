@@ -80,7 +80,7 @@ const Nav = ({ children }) => {
               />
             </form>
             {navLinks.map((items) => (
-              <Link to={`/${items.name}`} key={items.id}>
+              <Link to={`/${items.link}`} key={items.id}>
                 <h3>{items.name}</h3>
               </Link>
             ))}

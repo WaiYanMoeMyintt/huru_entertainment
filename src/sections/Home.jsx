@@ -5,6 +5,7 @@ import english from "../assets/english.png";
 import { Link } from "react-router-dom";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
+import chilling from "../assets/chilling.jpg";
 
 // Import Swiper styles
 import "swiper/css";
@@ -53,7 +54,7 @@ const Home = () => {
 
   return (
     <header className="h-full">
-      <div className="home_content">
+      <div className="home_content lg:hidden sm:flex flex-col">
         <Swiper
           pagination={{
             clickable: true,
@@ -103,6 +104,23 @@ const Home = () => {
           </Link>
         </div>
       </div>
+
+      <div className="home_lg_cover lg:flex flex-col hidden sm:flex flex-col">
+        <div className="home_lg_detail">
+          <h1>
+            Free Movies & TV Fewer <br />
+             Ads than Cable  <br />
+             No Subscription Required.
+          </h1>
+
+          <p>
+            Thousands of movies and TV shows. Always Free. 100% Legal. All Your
+            Streaming Services in One Place.
+          </p>
+          <Link className="cursor-pointer" to = "/categories">Start Watching</Link>
+        </div>
+      </div>
+
       <Upcoming />
       <Trending />
       <Popular />
