@@ -216,17 +216,21 @@ export const navLinks = [
   {
     id:1,
     name:"Explore",
+    link:"categories"
   },
   {
     id:2,
-    name:"Movies"
+    name:"Movies",
+    link:"huru/best-selection-movies/watch"
   },
   {
     id:3,
-    name:"Series"
+    name:"Series",
+    link:"huru/best-selection-series/watch"
   },
   {
-    id:4,
-    name:"TV-Shows"
-  }
+    id:3,
+    name:"Account",
+    link:"user/account"
+  },
 ];
