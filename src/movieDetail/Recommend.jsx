@@ -34,7 +34,7 @@ const Recommend = () => {
     recommend.length === 0 ? (<div></div>) : (
       <div className="recommend_content">
         <div className="recommend_title">
-          <h2>Movies Like {name}</h2>
+          <h2>If you like {name} then try,</h2>
         </div>
         <Swiper
           slidesPerView={3}

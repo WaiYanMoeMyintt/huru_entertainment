@@ -83,58 +83,6 @@ const Detail = () => {
               <p className="overview">{detail.overview}</p>
             </div>
           </div>
-
-          <div className="detail_cast">
-            <div className="writing">
-              <h2>Writer</h2>
-              {credit.map((items) => (
-                <div className="crew_list" key={items.id}>
-                  {items.known_for_department === "Writing" ? (
-                    <p>{items.name}</p>
-                  ) : (
-                    <p></p>
-                  )}
-                </div>
-              ))}
-            </div>
-            <div className="directing">
-              <h2>Director </h2>
-              {credit.map((items) => (
-                <div key={items.id}>
-                  {items.known_for_department === "Directing" ? (
-                    <p>{items.name}</p>
-                  ) : (
-                    <p></p>
-                  )}
-                </div>
-              ))}
-            </div>
-            <div className="editing">
-              <h2>Editor</h2>
-              {credit.map((items) => (
-                <div key={items.id}>
-                  {items.known_for_department === "Editing" ? (
-                    <p>{items.name}</p>
-                  ) : (
-                    <p></p>
-                  )}
-                </div>
-              ))}
-            </div>
-            <div className="production">
-              <h2>Producer </h2>
-              {credit.map((items) => (
-                <div key={items.id}>
-                  {items.known_for_department === "Production" ? (
-                    <p>{items.name}</p>
-                  ) : (
-                    <p></p>
-                  )}
-                </div>
-              ))}
-            </div>
-          </div>
-
           <Cast />
           <Trailer />
           <Recommend />
@@ -142,6 +90,8 @@ const Detail = () => {
         </div>
       )}
 
+
+    <div className="home_lg_content lg:flex flex-col hidden sm:flex flex-col">
       {
         <div className="detail_lg">
           {detail ? (
@@ -196,8 +146,17 @@ const Detail = () => {
          <Cast  />
       </div>
 
+      <div className="trailer">
+          <Trailer />
+      </div>
+
       <div className="similar">
            <Recommend />
+      </div>
+
+      <div className="footer mt-4">
+           <Footer />
+      </div>
       </div>
     </div>
   );
