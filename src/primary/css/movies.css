@@ -1,0 +1,19 @@
+.primary_movies_list .primary_title h2 {
+    color: var(--font-primary);
+    font-size: 1.5rem;
+    white-space: nowrap;
+    font-weight: normal;
+    padding: 1rem 0;
+    margin-left: 1rem;
+}
+.primary_movies_content{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    justify-content: space-between;
+    gap: 1rem;
+    width: 100%;
+    margin-top: 1rem;
+    position: relative;
+    padding: 2rem 1rem;
+    scroll-behavior: smooth;
+}
