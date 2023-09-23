@@ -69,7 +69,7 @@ const Search = () => {
           </div>
         </div>
         <div className="logo cursor-pointer">
-        <img src={menu} alt="menu" />
+          <img src={menu} alt="menu" />
         </div>
       </div>
 

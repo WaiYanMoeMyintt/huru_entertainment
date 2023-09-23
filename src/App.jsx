@@ -21,6 +21,7 @@ import Streams from './components/Streams';
 import Upcoms from './components/Upcoms';
 import Movies from './primary/Movies';
 import PrimarySeries from './primary/PrimarySeries';
+import Pages from "./primary/Pages";
 const App = () => {
 
   document.title = "Chill With Huru's";
@@ -47,6 +48,7 @@ const App = () => {
                  <Route path="/upcoming" element = {<Upcoms />}/>
                  <Route path="/huru/best-selection-movies/watch" element = {<Movies />}/>
                  <Route path="/huru/best-selection-series/watch" element = {<PrimarySeries />}/>
+                 <Route path="/huru/best-selection-movies/watch/pages/:id" element = {<Pages />}/>
               </Routes>
           </Nav>
     </BrowserRouter>

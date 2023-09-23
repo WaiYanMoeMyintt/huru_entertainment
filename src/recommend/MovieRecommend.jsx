@@ -51,7 +51,7 @@ const MovieRecommend = () => {
         <div
           key={detail.id}
           // style={{ backgroundImage: `url(${imgUrl + detail.backdrop_path})` }}
-          className="detail_list"
+          className="detail_list  lg:hidden sm:flex flex-col"
         >
           <div className="detail_control">
             <div className="left">
@@ -79,63 +79,80 @@ const MovieRecommend = () => {
             </div>
           </div>
 
-          <div className="detail_cast">
-            <div className="writing">
-              <h2>Writer</h2>
-              {credit.map((items) => (
-                <div className="crew_list" key={items.id}>
-                  {items.known_for_department === "Writing" ? (
-                    <p>{items.name}</p>
-                  ) : (
-                    <p></p>
-                  )}
-                </div>
-              ))}
-            </div>
-            <div className="directing">
-              <h2>Director </h2>
-              {credit.map((items) => (
-                <div key={items.id}>
-                  {items.known_for_department === "Directing" ? (
-                    <p>{items.name}</p>
-                  ) : (
-                    <p></p>
-                  )}
-                </div>
-              ))}
-            </div>
-            <div className="editing">
-              <h2>Editor</h2>
-              {credit.map((items) => (
-                <div key={items.id}>
-                  {items.known_for_department === "Editing" ? (
-                    <p>{items.name}</p>
-                  ) : (
-                    <p></p>
-                  )}
-                </div>
-              ))}
-            </div>
-            <div className="production">
-              <h2>Producer </h2>
-              {credit.map((items) => (
-                <div key={items.id}>
-                  {items.known_for_department === "Production" ? (
-                    <p>{items.name}</p>
-                  ) : (
-                    <p></p>
-                  )}
-                </div>
-              ))}
-            </div>
-          </div>
-
           <Cast />
           <Trailer />
           <Recommend />
           <Footer />
         </div>
       )}
+      
+    <div className="home_lg_content lg:flex flex-col hidden sm:flex flex-col">
+      {
+        <div className="detail_lg">
+          {detail ? (
+            <div className="detail_lg_control relative">
+              <div
+                style={{
+                  backgroundImage: `url(${imgUrl + detail.backdrop_path})`,
+                }}
+                className="detail_lg_cover h-96 bg-center opacity-30  bg-cover bg-no-repeat"
+                key={detail.id}
+              ></div>
+              <div className="detail_lg_movies_list" key={detail.id}>
+                <div className="left w-100">
+                  <img
+                  className="poster"
+                    src={imgUrl + detail.poster_path}
+                    alt={detail.original_title}
+                  />
+                </div>
+                <div className="right">
+                  <h2>{detail.original_title}</h2>
+                  <i className="tag_line">{detail.tagline}</i>
+
+                  <div className="informatio lg_information gap-2 flex">
+                    <p>{detail.release_date.slice(0, 4)}</p>
+                    <p>{detail.runtime}min</p>
+                    {detail.genres.map((items) => (
+                      <Link  to={`/categories/${items.id}/${items.name}`} key={items.id}>
+                        <p className="hover:text-emerald-400 transition-transform">{items.name}</p>
+                      </Link>
+                    ))}
+                    <p className="flex items-center justify-center gap-1 ">
+                      <img src={imdb} alt="imdb" width={50} height={50} />
+                      {detail.vote_average}
+                      <span className="popularity">({detail.popularity})</span>
+                    </p>
+                  </div>
+
+                  <p className="lg_overview">{detail.overview}</p>
+                </div>
+              </div>
+            </div>
+          ) 
+          : (
+            <div>
+              <h1>Movie not found </h1>
+            </div>
+          )}
+        </div>
+      }
+      <div className="detail_cast">
+         <Cast  />
+      </div>
+
+      <div className="trailer">
+          <Trailer />
+      </div>
+
+      <div className="similar">
+           <Recommend />
+      </div>
+
+      <div className="footer mt-4">
+           <Footer />
+      </div>
+      </div>
     </div>
   );
 };

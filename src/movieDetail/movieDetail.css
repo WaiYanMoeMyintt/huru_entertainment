@@ -29,7 +29,7 @@
     padding-bottom: .5rem;
 }
 .right .tagline{
-    color: var(--second-font-primary);
+    color: var(--font-primary);
     padding-bottom: .5rem;
 }
 .right .informatio {
@@ -188,7 +188,7 @@
     font-weight: 500;
 }
 .right .tag_line {
-    color: var(--second-font-primary);
+    color: var(--font-primary);
     font-size: 1rem;
     padding-bottom: .5rem;
 }

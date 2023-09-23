@@ -75,7 +75,7 @@ const Nav = ({ children }) => {
             <form onSubmit={handleSubmit} className="input_control">
               <input
                 onChange={updateValue}
-                type="search"
+                type="text"
                 placeholder="Search Movies..."
               />
             </form>
