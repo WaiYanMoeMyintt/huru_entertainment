@@ -50,16 +50,27 @@
     100% { transform: rotate(360deg); }
   }
   
-.pagination_links{
-  padding: 2rem 0;
-  display: flex;
-  gap: 1.1rem;
-  overflow-x: scroll;
-  width: 10000%;
-}
 .items_child{
   background-color: #26272e;
   padding: 0.5rem 1rem;
   border-radius: .4rem;
   color: var(--font-primary);
+}
+.pagination_content{
+  color: white;
+  padding: 1rem 2rem;
+}
+.MuiPagination-ul{
+  background-color: #1e1f2b;
+  height: 3rem;
+  border-radius:.4rem;
+  width: 100%; background-color: #15161d;
+  display: flex;  
+  justify-content: space-between;
+  align-items: center;
+  /* gap:1rem; */
+}
+.MuiButtonBase-root {
+  color: white;
+  display: none;
 }
