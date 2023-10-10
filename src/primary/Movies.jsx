@@ -9,7 +9,6 @@ const Movies = () => {
   const [movies, setMovies] = useState([]);
 
 
-
   useEffect(() => {
     const movieCategories = async () => {
       try {
@@ -33,6 +32,7 @@ const Movies = () => {
           <Link
             to={`/movies/${items.id}/${items.original_title}`}
             key={items.id}
+            target = "_blank"
           >
             <img src={imgUrl + items.poster_path} alt={items.original_title} />
             <p>{items.original_title}</p>

@@ -20,7 +20,6 @@ import Latests from './components/Latests';
 import Streams from './components/Streams';
 import Upcoms from './components/Upcoms';
 import Movies from './primary/Movies';
-import PrimarySeries from './primary/PrimarySeries';
 import Pages from "./primary/Pages";
 const App = () => {
 
@@ -47,7 +46,6 @@ const App = () => {
                  <Route path="/streaming" element = {<Streams />}/>
                  <Route path="/upcoming" element = {<Upcoms />}/>
                  <Route path="/huru/best-selection-movies/watch" element = {<Movies />}/>
-                 <Route path="/huru/best-selection-series/watch" element = {<PrimarySeries />}/>
                  <Route path="/huru/best-selection-movies/watch/pages/:id" element = {<Pages />}/>
               </Routes>
           </Nav>

@@ -225,11 +225,6 @@ export const navLinks = [
   },
   {
     id:3,
-    name:"Series",
-    link:"huru/best-selection-series/watch"
-  },
-  {
-    id:3,
     name:"Account",
     link:"user/account"
   },

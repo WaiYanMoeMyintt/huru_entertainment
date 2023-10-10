@@ -1,3 +1,4 @@
+
 .pagination_control{
     padding: 1rem 0.6rem;
 }
@@ -57,7 +58,6 @@
   color: var(--font-primary);
 }
 .pagination_content{
-  color: white;
   padding: 1rem 2rem;
 }
 .MuiPagination-ul{
@@ -70,7 +70,17 @@
   align-items: center;
   /* gap:1rem; */
 }
-.MuiButtonBase-root {
-  color: white;
-  display: none;
+/* styles.css */
+.custom-pagination {
+  .MuiPaginationItem-page.Mui-selected {
+    /* background-color:#1a1d29; */
+    border: 2px solid var(--second-primary);
+    color: white; 
+  }
+
+  .MuiPaginationItem-page:hover {
+    border: .5px solid hsl(150, 59%, 54%);
+    color: white; 
+  }
 }
+

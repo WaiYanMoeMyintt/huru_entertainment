@@ -1,87 +1,200 @@
-.huru_control {
+
+.detail_control{
     width: 100%;
+    height: 100%;
     padding: 1rem 1.5rem;
     display: flex;
-    justify-content:flex-start;
-    flex-wrap: wrap;
+    justify-content: center;
     align-items: center;
-    position: relative;
+    flex-wrap: wrap;
+    /* justify-content:flex-start;
+    flex-wrap: wrap; */
+    /* align-items: center; */
 }
-.series_left {
+.detail_control .left {
     width: 100%;
     position: relative;
-
 }
-.series_left img {
-    max-width: 100%;
+.detail_control .left img {
     border-radius: .5rem;
 }
-.series_right {
+
+.detail_control .right {
+    padding: 1rem 1.1rem;
     margin-top: .5rem;
 }
-.series_right .information{
-    color: var(--font-primary);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 1rem 1rem;
-}
-.series_right h2 {
+.detail_control .right h2 {
     color: var(--font-primary);
     font-size: 1.45rem;
     padding-bottom: .5rem;
 }
-.popularity{
-    font-size: 0.7rem;
-    color: hsl(0, 0%, 37%);;
+.right .tagline{
+    color: var(--font-primary);
+    padding-bottom: .5rem;
 }
-.overview{
+.right .informatio {
+    color: var(--font-primary);
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+    flex: 1;
+    gap:1rem;
+    flex-wrap: wrap;
+}
+.overview {
     color: var(--second-font-primary);
     line-height: 2rem;
     padding: 0.5rem 0;
     font-size: 0.9rem;
 }
+.detail_cast{
 
-.episode_control {
-    margin: 1rem 0;
-    padding: 1rem 1.5rem;
-    position: relative;
-}
-
-.episode_title h2 {
-    color: var(--font-primary);
-    font-size: 1.45rem;
-    padding-bottom: .5rem;
-}
-.episodes {
+    width: 100%;
+    padding: 2rem 1rem;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    justify-content: center;
+    gap: 1rem;
+    width: 100%;
+    margin-top: 1rem;
+    position: relative;
+    text-align: center;
+}
+.detail_cast::after{
+    content: '';
+    width: 100%;
+    height: 1px;
+    background-color: var(--second-font-primary);
+    position: absolute;
+    bottom: 0;
+}
+.detail_cast h2 {
+    color: var(--second-font-primary);
+}
+.detail_cast p {
+    color: var(--font-primary);
+    font-size: 0.8rem;
+}
+
+.cast_content{
+    margin-top: 2rem;
+    padding: 0 0.7rem;
+    position: relative;
+}
+.cast_content .cast_title{
+     /* background-color: green; */
+}
+.cast_content .cast_title h2 {
+    color: var(--font-primary);
+    font-size: 1.4rem;
+    padding-bottom: 1rem;
+}
+.cast_list {
+    width: 100%;
+}
+.cast_list p {
+    color: var(--font-primary);
+    font-size: 0.8rem;
+}
+.cast_list img {
+    display: block;
+    border-radius: 0.5rem;
+    max-width: 100%;
+    height:100%;
+}
+.cast_swiper {
+    position: relative;
+}
+.cast_swiper::after{
+    content: '';
+    width: 100%;
+    height: 1px;
+    background-color: var(--second-font-primary);
+    position: absolute;
+    bottom: 0rem;
+}
+
+
+.video_content{
+    margin-top: 2rem;
+    padding: 0 1.5rem;
+    position: relative;
+}
+.video_content .video_title h2 {
+    color: var(--font-primary);
+    font-size: 1.4rem;
+    padding-bottom: 1rem;
+}
+.trailers iframe {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
     justify-content: space-between;
     gap: 1rem;
     width: 100%;
+    margin-top: 1rem;
     position: relative;
     padding: 2rem 0;
+    height: 20rem;
+    border-radius: 1rem;
 }
-.episodes .poster {
-    background-color:hsl(210, 4%, 10%);
+
+.recommend_content {
+    margin-top: 4rem;
+    padding: 0 1.5rem;
+    position: relative;
 }
-.information {
-    margin: 0.5rem 0;
+.recommend_content::after {
+    content: '';
+    width: 85%;
+    height: 1px;
+    background-color: var(--second-font-primary);
+    position: absolute;
+    bottom: 0rem;
 }
-img {
-    border-radius: .5rem;
+.recommend_content .recommend_title h2 {
+    color: var(--font-primary);
+    font-size: 1.4rem;
+    padding-bottom: 1rem;
 }
-.episodes  h3 {
-    color:var(--font-primary);
+.popularity{
+    font-size: 0.7rem;
+    color: hsl(0, 0%, 37%);;
 }
-.episodes  p  {
-    font-size: 0.9rem;
-}
-.error {
-    background-color: hsl(240, 8%, 9%);
+
+/* for large devices  */
+.detail_lg_movies_list{
     height: 100%;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: .5rem;
+    justify-content: space-between;
+    flex: 1;
+    padding: .5rem 2rem;
+    position: absolute;
+    top: 1.5rem;
+}
+.detail_lg_movies_list .poster
+{
+    max-width: 20rem;
+    height: 18rem;
+    cursor: pointer;
+}
+.detail_lg_movies_list .right {
+    margin-left: 2rem;
+    padding: 1rem 1.5rem;
+}
+.right h2 {
+    font-size: 2rem;
+    color: var(--font-primary);
+    padding-bottom: .5rem;
+    font-weight: 500;
+}
+.right .tag_line {
+    color: var(--font-primary);
+    font-size: 1rem;
+    padding-bottom: .5rem;
+}
+.right .lg_information{
+    padding:1rem 0rem;
+}
+.right .lg_overview {
+    line-height: 2rem;
 }
